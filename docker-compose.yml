@@ -1,8 +1,7 @@
 version: '2'
 services:
   web:
-    #image: dockerdrop/dockerdrop-nginx:latest
-    build: ./docker/nginx/
+    image: keithcaulkins/docker-base-nginx:latest
     ports:
       - "8000:80"
     volumes:
@@ -17,8 +16,7 @@ services:
       NGINX_MAX_BODY_SIZE: 20m
 
   php:
-    #image: dockerdrop/dockerdrop-php:latest
-    build: ./docker/php/
+    image: keithcaulkins/docker-base-php:latest
     expose:
       - 9000
     volumes:
